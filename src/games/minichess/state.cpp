@@ -87,7 +87,7 @@ int State::evaluate(
         // [ Hackathon TODO 1-3 ]
         // get the position for player's king and opponent's king
         for(int i = 0; i < BOARD_H; i++){
-            for(int j = 0; i < BOARD_W; i++){
+            for(int j = 0; j < BOARD_W; j++){
                 if(self_board[i][j] == 6){
                     self_kr = i; self_kc = j;
                 }
@@ -137,7 +137,7 @@ int State::evaluate(
         // [ Hackathon TODO 1-2 ]
         // Simply add each piece's value to score
         for(int i = 0; i < BOARD_H; i++){
-            for(int j = 0; i < BOARD_W; i++){
+            for(int j = 0; j < BOARD_W; j++){
                 int self_piece = self_board[i][j];
                 if(self_piece > 0 && self_piece <= 6){
                     self_score += simple_material[self_piece];

@@ -380,9 +380,10 @@ static void do_search(
         info << " score cp " << result.score
             << " nodes " << total_nodes
             << " time " << total_ms
-            << " nps " << nps;
+            << " nps " << nps
+            << " pv " << move_to_str(best_move);
         if(!result.pv.empty()){
-            info << " pv " << format_pv(result.pv);
+            info << " " << format_pv(result.pv);
         }
 
         if(alive()){
@@ -439,9 +440,10 @@ static void do_search(
                     << " score cp " << sub.score
                     << " nodes " << total_nodes
                     << " time " << total_ms2
-                    << " nps " << sub_nps;
+                    << " nps " << sub_nps
+                    << " pv " << move_to_str(sub.best_move);
                 if(!sub.pv.empty()){
-                    sub_info << " pv " << format_pv(sub.pv);
+                    sub_info << " " << format_pv(sub.pv);
                 }
 
                 send(sub_info.str());

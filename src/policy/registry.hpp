@@ -13,8 +13,10 @@
 #include <vector>
 #include "search_types.hpp"
 #include "game_history.hpp"
+#include "AlphaBeta.hpp"
 #include "minimax.hpp"
 #include "random.hpp"
+#include "submission.hpp"
 
 struct AlgoEntry {
     std::string name;
@@ -25,6 +27,30 @@ struct AlgoEntry {
 
 inline const std::vector<AlgoEntry>& get_algo_table(){
     static const std::vector<AlgoEntry> table = {
+        {
+            "submission", // <-- Daftarkan AI upgrade kita di sini
+            Submission::default_params(),
+            Submission::param_defs(),
+            [](State* s, int d, GameHistory& h, SearchContext& c){
+                return Submission::search(s, d, h, c);
+            }
+        },
+        {
+            "pvs",
+            Submission::default_params(),
+            Submission::param_defs(),
+            [](State* s, int d, GameHistory& h, SearchContext& c){
+                return Submission::search(s, d, h, c);
+            }
+        },
+        {
+            "alphabeta",
+            AlphaBeta::default_params(),
+            AlphaBeta::param_defs(),
+            [](State* s, int d, GameHistory& h, SearchContext& c){
+                return AlphaBeta::search(s, d, h, c);
+            }
+        },
         {
             "minimax",
             MiniMax::default_params(),
@@ -54,4 +80,5 @@ inline const AlgoEntry* find_algo(const std::string& name){
     return nullptr;
 }
 
-inline std::string default_algo_name(){ return "minimax"; }
+// Opsional: Ubah default_algo_name menjadi "submission" agar otomatis terpilih saat dijalankan
+inline std::string default_algo_name(){ return "submission"; }
