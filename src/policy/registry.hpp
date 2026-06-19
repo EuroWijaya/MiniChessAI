@@ -16,7 +16,7 @@
 #include "AlphaBeta.hpp"
 #include "minimax.hpp"
 #include "random.hpp"
-#include "submission.hpp"
+#include "114000271_submission.hpp"
 #include "PVS.hpp"
 
 struct AlgoEntry {

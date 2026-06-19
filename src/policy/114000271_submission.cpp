@@ -3,7 +3,7 @@
 #include <cstring>
 #include <vector>
 
-#include "submission.hpp"
+#include "114000271_submission.hpp"
 #include "config.hpp"
 
 namespace {
@@ -285,8 +285,6 @@ int qsearch(State* s, int alpha, int beta,
 
     if (stand >= beta) return stand;
 
-    // Delta pruning: kalau bahkan capture queen pun tidak cukup,
-    // jangan lanjut qsearch terlalu jauh.
     if (stand + PVAL[5] + 100 < alpha) {
         return alpha;
     }
@@ -305,8 +303,6 @@ int qsearch(State* s, int alpha, int beta,
         int tc = (int)m.second.second;
         int cap = s->piece_at(1 - s->player, tr, tc);
 
-        // Per-capture delta pruning:
-        // kalau capture ini tetap tidak cukup buat ngejar alpha, skip.
         if (cap > 0 && cap != 6 && stand + PVAL[cap] + 100 < alpha) {
             continue;
         }
