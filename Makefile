@@ -5,7 +5,7 @@ SOURCES_DIR = src
 UNITTEST_DIR = unittest
 BUILD_DIR = build
 
-STATE_SOURCE = $(SOURCES_DIR)/games/minichess/state.cpp
+STATE_SOURCE = $(SOURCES_DIR)/games/minichess/114000271_state.cpp
 POLICY_SRC = $(wildcard $(SOURCES_DIR)/policy/*.cpp)
 UNITTESTS = $(wildcard $(UNITTEST_DIR)/*.cpp)
 TARGET_UNITTEST = $(UNITTESTS:$(UNITTEST_DIR)/%_test.cpp=%)

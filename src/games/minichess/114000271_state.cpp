@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <cstdlib>
 
-#include "./state.hpp"
+#include "./114000271_state.hpp"
 #include "config.hpp"
 #include "../../policy/game_history.hpp"
 

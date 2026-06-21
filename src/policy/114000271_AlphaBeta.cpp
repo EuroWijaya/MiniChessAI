@@ -1,6 +1,6 @@
 #include <utility>
-#include "state.hpp"
-#include "AlphaBeta.hpp"
+#include "114000271_state.hpp"
+#include "114000271_AlphaBeta.hpp"
 
 /* ========================================================================
  * ALPHABETA — EVAL_CTX
